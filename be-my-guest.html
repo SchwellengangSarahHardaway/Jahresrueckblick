@@ -2,48 +2,32 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <title>Be My Guest</title>
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
-      width: 100%;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      width: 100%;
       font-family: sans-serif;
-      
-      /* Echte Holztextur als Hintergrund */
-      background-image: url('holz-hintergrund.jpg');
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Hintergrundbild Holz */
+    body {
+      background-image: url('Holz-Hintergrund-JPG');
       background-size: cover;
       background-position: center;
     }
 
-    #main-image {
-      max-width: 90%;
-      max-height: 90%;
-      object-fit: contain;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    }
-  </style>
-</head>
-<body>
-  <img id="main-image" src="willkommen.jpg" alt="Willkommen">
-</body>
-</html></html>      max-width: 90%;
-      margin: 50px auto;
-      display: block;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* Schatten für Flyer */
-    }
-
-    /* Optional: Text unter dem Flyer */
-    #flyer-text {
+    /* Flyer-Container */
+    #flyer {
       position: relative;
       z-index: 1;
-      text-align: center;
-      color: #fff;
-      font-size: 1.2em;
-      margin-top: 20px;
+      max-width: 90%;
+      margin: 50px auto;
+      display: block;
     }
   </style>
 </head>
@@ -52,8 +36,5 @@
   <!-- Flyer -->
   <img id="flyer" src="Willkommen-JPEG" alt="Be My Guest Flyer">
 
-  <!-- Text unter Flyer (optional) -->
-  <!-- <div id="flyer-text">Innehalten & Genießen</div> -->
-
 </body>
-</html></html>
+</html>
