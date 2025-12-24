@@ -24,6 +24,7 @@ video {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -31,7 +32,7 @@ video {
 <body>
 
 <div class="container" onclick="startVideo()">
-  <video id="welcomeVideo" playsinline>
+  <video id="welcomeVideo" playsinline poster="willkommen.jpg">
     <source src="willkommensvideo.mp4" type="video/mp4">
   </video>
 </div>
