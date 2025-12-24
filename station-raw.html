@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>RAW Station</title>
+<style>
+    body {
+        background-color: #000; /* schwarz */
+        color: #fff;
+        font-family: "Georgia", serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        text-align: center;
+        padding: 20px;
+    }
+    .text {
+        font-size: 1.8em;
+        line-height: 1.5em;
+        margin-bottom: 50px;
+    }
+    .audio-container {
+        border: 2px solid gold; /* feiner goldener Rahmen */
+        padding: 20px;
+        border-radius: 10px;
+    }
+    audio {
+        width: 200px; /* Button mittig, nicht riesig */
+    }
+</style>
+</head>
+<body>
+    <div class="text">
+        Da, wo meine Worte wachsen,<br>
+        bin ich ganz und doch unfertig-roh.<br>
+        Spüre ich tief, falle ich tief,<br>
+        brenne ich ganz – lichterloh.
+    </div>
+    <div class="audio-container">
+        <audio controls>
+            <source src="raw-text.mp3" type="audio/mpeg">
+            Dein Browser unterstützt kein Audio.
+        </audio>
+    </div>
+</body>
+</html>
