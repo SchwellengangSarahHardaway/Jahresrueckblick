@@ -12,17 +12,19 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #000;
+      background: #000; /* minimaler schwarzer Hintergrund */
       overflow: hidden;
+      font-family: sans-serif;
     }
 
-    /* Video skaliert automatisch, füllt den Bildschirm ohne Verzerrung */
+    /* Video behält Originalgröße, zentriert */
     #bg-video {
-      width: 100vw;     /* gesamte Breite */
-      height: 100vh;    /* gesamte Höhe */
-      object-fit: contain; /* zeigt den gesamten Flyer, keine Teile abgeschnitten */
+      display: block;
+      max-width: 95%;   /* passt sich dem Bildschirm an, bleibt proportional */
+      max-height: 95%;
       border: 2px solid #111; /* minimaler Rahmen */
       border-radius: 5px;
+      object-fit: contain; /* zeigt gesamten Flyer ohne Abschneiden */
     }
 
     /* Play-Button über dem Video */
@@ -41,11 +43,13 @@
 </head>
 <body>
 
-  <video id="bg-video" loop>
+  <!-- Video -->
+  <video id="bg-video" loop muted>
     <source src="Willkommensvideo.mp4" type="video/mp4">
     Dein Browser unterstützt das Video-Tag nicht.
   </video>
 
+  <!-- Play-Button -->
   <button id="play-button" onclick="startVideo()">▶ Ton starten</button>
 
   <script>
