@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>RAW-Station</title>
   <style>
-    /* Vollbild und Zentrierung */
     html, body {
       margin: 0;
       padding: 0;
@@ -18,7 +17,6 @@
       font-family: sans-serif;
     }
 
-    /* Sterne-Hintergrund */
     #stars {
       position: absolute;
       width: 100%;
@@ -27,7 +25,6 @@
       z-index: 0;
     }
 
-    /* Rahmen für den Text */
     .text-frame {
       position: relative;
       z-index: 1;
@@ -38,10 +35,9 @@
       color: #f8f4e3; /* Weißgold */
       font-size: 24px;
       max-width: 80%;
-      background: rgba(0, 0, 0, 0); /* transparent */
+      background: rgba(0, 0, 0, 0);
     }
 
-    /* Play-Button optional */
     #play-button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -51,14 +47,3 @@
       border-radius: 8px;
       cursor: pointer;
     }
-  </style>
-</head>
-<body>
-
-  <!-- Sterne -->
-  <canvas id="stars"></canvas>
-
-  <!-- Text-Rahmen -->
-  <div class="text-frame">
-    Da, wo meine Worte wachsen,<br>
-    bin
