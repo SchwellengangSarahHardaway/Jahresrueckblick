@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Willkommen zum Schwellengang</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000; /* Hintergrund schwarz, falls Video kleiner ist */
+      font-family: sans-serif;
+    }
+
+    /* Video im Hintergrund, angepasst auf Bildschirm */
+    #bg-video {
+      width: 90%;       /* passt sich dem Bildschirm an */
+      height: auto;     /* Höhe proportional */
+      max-height: 90%;  /* verhindert, dass es zu groß wird */
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Play-Button */
+    #play-button {
+      position: absolute;
+      bottom: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video -->
+  <video id="bg-video" loop>
+    <source src="Willkommensvideo.mp4" type="video/mp4">
+    Dein Browser unterstützt das Video-Tag nicht.
+  </video>
+
+  <!-- Play-Button -->
+  <button id="play-button" onclick="startVideo()">▶ Video starten</button>
+
+  <script>
+    function startVideo() {
+      const video = document.getElementById('bg-video');
+      video.play();
+      // Button ausblenden, wenn Video gestartet ist
+      document.getElementById('play-button').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
