@@ -2,39 +2,39 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Be My Guest</title>
+  <title>Willkommen</title>
   <style>
-    html, body {
+    body, html {
       margin: 0;
       padding: 0;
-      height: 100%;
       width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-family: sans-serif;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Hintergrundbild Holz, leicht abgedunkelt */
-    body {
-      background-image: url('Holz-Hintergrund-JPG');
+      
+      /* Echte Holztextur als Hintergrund */
+      background-image: url('Holz-Hintergrund.jpg');
       background-size: cover;
       background-position: center;
     }
 
-    /* Halbtransparente schwarze Overlay-Schicht zum Abdunkeln */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.4); /* 40% Schwarz */
-      z-index: 0;
-    }
-
-    /* Flyer-Container */
-    #flyer {
-      position: relative;
-      z-index: 1;
+    #main-image {
       max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      
+      /* Schatten hinter dem Bild */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      border-radius: 5px; /* optional, macht die Ecken leicht rund */
+    }
+  </style>
+</head>
+<body>
+  <img id="main-image" src="willkommen.jpg" alt="Willkommen">
+</body>
+</html>      max-width: 90%;
       margin: 50px auto;
       display: block;
       box-shadow: 0 8px 20px rgba(0,0,0,0.5); /* Schatten für Flyer */
