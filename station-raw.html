@@ -7,19 +7,14 @@
 <style>
 body {
     margin: 0;
-    height: 100vh;
     background: black;
     color: white;
-    font-family: "Georgia", serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    font-family: Georgia, serif;
 }
 
-/* goldene Sterne */
+/* Sternchen */
 .star {
-    position: absolute;
+    position: fixed;
     width: 2px;
     height: 2px;
     background: gold;
@@ -29,24 +24,22 @@ body {
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.2; }
+    0%,100% { opacity: 0.2; }
     50% { opacity: 1; }
 }
 
-/* Textcontainer */
+/* Textbox */
 .text-container {
-    position: relative;
-    z-index: 2;
+    margin: 15vh auto;
+    max-width: 90%;
     border: 1.5px solid gold;
     padding: 26px;
     border-radius: 14px;
-    max-width: 90%;
     text-align: center;
-    cursor: pointer;
 }
 
 .text {
-    font-size: 1.7em;
+    font-size: 1.6em;
     line-height: 1.5;
 }
 </style>
@@ -54,6 +47,41 @@ body {
 
 <body>
 
-<!-- Sterne generieren -->
+<!-- Sterne -->
 <script>
-for (let i = 0; i < 36;
+for (let i = 0; i < 40; i++) {
+    const s = document.createElement("div");
+    s.className = "star";
+    s.style.top = Math.random() * 100 + "vh";
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.animationDelay = Math.random() * 4 + "s";
+    document.body.appendChild(s);
+}
+</script>
+
+<!-- Text -->
+<div class="text-container" onclick="playAudio()">
+    <div class="text">
+        Da, wo meine Worte wachsen,<br>
+        bin ich ganz und doch unfertig-roh.<br>
+        Spüre ich tief, falle ich tief,<br>
+        brenne ich ganz – lichterloh.
+    </div>
+    <p style="font-size:0.8em; opacity:0.7; margin-top:20px;">
+        Tippe, um zu hören
+    </p>
+</div>
+
+<!-- Audio -->
+<audio id="audio">
+    <source src="raw-text.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playAudio() {
+    document.getElementById("audio").play();
+}
+</script>
+
+</body>
+</html>
