@@ -2,7 +2,6 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Be My Guest</title>
   <style>
     body, html {
       margin: 0;
@@ -13,20 +12,18 @@
       justify-content: center;
       align-items: center;
       font-family: sans-serif;
-
-      /* Dunkler Holzton mit vertikalen Latten und Struktur */
-      background-color: #3e2f2a;
-      background-image:
-        linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-      background-size: 50px 100%;
+      
+      /* Echte Holztextur als Hintergrund */
+      background-image: url('holz-hintergrund.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
     #main-image {
       max-width: 90%;
       max-height: 90%;
       object-fit: contain;
-      box-shadow: 0 0 15px rgba(0,0,0,0.5); /* optional: leicht abgehoben */
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
     }
   </style>
 </head>
