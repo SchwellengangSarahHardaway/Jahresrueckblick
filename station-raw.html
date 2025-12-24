@@ -2,48 +2,58 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<title>RAW Station</title>
+<title>RAW</title>
+
 <style>
-    body {
-        background-color: #000; /* schwarz */
-        color: #fff;
-        font-family: "Georgia", serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        text-align: center;
-        padding: 20px;
-    }
-    .text {
-        font-size: 1.8em;
-        line-height: 1.5em;
-        margin-bottom: 50px;
-    }
-    .audio-container {
-        border: 2px solid gold; /* feiner goldener Rahmen */
-        padding: 20px;
-        border-radius: 10px;
-    }
-    audio {
-        width: 200px; /* Button mittig, nicht riesig */
-    }
+body {
+    margin: 0;
+    height: 100vh;
+    background: black;
+    color: white;
+    font-family: "Georgia", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* goldene Sterne */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: gold;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+/* Textcontainer */
+.text-container {
+    position: relative;
+    z-index: 2;
+    border: 1.5px solid gold;
+    padding: 26px;
+    border-radius: 14px;
+    max-width: 90%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.text {
+    font-size: 1.7em;
+    line-height: 1.5;
+}
 </style>
 </head>
+
 <body>
-    <div class="text">
-        Da, wo meine Worte wachsen,<br>
-        bin ich ganz und doch unfertig-roh.<br>
-        Spüre ich tief, falle ich tief,<br>
-        brenne ich ganz – lichterloh.
-    </div>
-    <div class="audio-container">
-        <audio controls>
-            <source src="raw-text.mp3.mp3" type="audio/mpeg">
-            Dein Browser unterstützt kein Audio.
-        </audio>
-    </div>
-</body>
-</html>
+
+<!-- Sterne generieren -->
+<script>
+for (let i = 0; i < 36;
