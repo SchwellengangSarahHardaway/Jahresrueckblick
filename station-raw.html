@@ -32,9 +32,90 @@
       padding: 30px 40px;
       border: 2px solid gold; /* feiner goldener Rahmen */
       border-radius: 10px;
-      max-width: 90%;
+      max-width: 80%;
+      margin: auto;
+      display: inline-block;
+      background: rgba(10,10,42,0.95); /* dunkles Blau leicht deckend für Textlesbarkeit */
     }
 
+    #container p {
+      color: #ffd700 !important; /* sanftes Gold, zwingend */
+      font-size: 1.5em;
+      line-height: 1.6em;
+      margin: 0;
+    }
+
+    #play-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background: rgba(255, 215, 0, 0.8);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    audio {
+      display: none;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: gold;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="stars"></div>
+
+  <div id="container">
+    <p>Da, wo meine Worte wachsen,<br>
+    bin ich ganz und doch unfertig-roh.<br>
+    Spüre ich tief, falle ich tief,<br>
+    brenne ich ganz – lichterloh.</p>
+
+    <audio id="audio">
+      <source src="raw-text.mp3.mp3" type="audio/mpeg">
+      Dein Browser unterstützt das Audio-Tag nicht.
+    </audio>
+
+    <button id="play-button" onclick="startAudio()">▶ Ton starten</button>
+  </div>
+
+  <script>
+    function startAudio() {
+      const audio = document.getElementById('audio');
+      audio.play();
+      document.getElementById('play-button').style.display = 'none';
+    }
+
+    const starsContainer = document.getElementById('stars');
+    const numStars = 50;
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.width = Math.random() * 3 + 1 + 'px';
+      star.style.height = star.style.width;
+      star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+      starsContainer.appendChild(star);
+    }
+  </script>
+
+</body>
+</html>
     #container p {
       color: #ffd700; /* sanftes Gold */
       font-size: 1.5em;
