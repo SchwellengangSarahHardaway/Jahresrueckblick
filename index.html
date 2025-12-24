@@ -1,65 +1,51 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Willkommensvideo</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #000; /* minimaler schwarzer Hintergrund */
-      overflow: hidden;
-      font-family: sans-serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schwellengang – Willkommen</title>
 
-    /* Video behält Originalgröße, zentriert */
-    #bg-video {
-      display: block;
-      max-width: 95%;   /* passt sich dem Bildschirm an, bleibt proportional */
-      max-height: 95%;
-      border: 2px solid #111; /* minimaler Rahmen */
-      border-radius: 5px;
-      object-fit: contain; /* zeigt gesamten Flyer ohne Abschneiden */
-    }
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  height: 100%;
+}
 
-    /* Play-Button über dem Video */
-    #play-button {
-      position: absolute;
-      bottom: 20px;
-      padding: 12px 24px;
-      font-size: 18px;
-      background: rgba(255, 255, 255, 0.8);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 2;
-    }
-  </style>
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Video -->
-  <video id="bg-video" loop muted>
-    <source src="Willkommensvideo.mp4" type="video/mp4">
-    Dein Browser unterstützt das Video-Tag nicht.
+<div class="container" onclick="startVideo()">
+  <video id="welcomeVideo" playsinline>
+    <source src="willkommensvideo.mp4" type="video/mp4">
   </video>
+</div>
 
-  <!-- Play-Button -->
-  <button id="play-button" onclick="startVideo()">▶ Ton starten</button>
+<script>
+function startVideo() {
+  const video = document.getElementById("welcomeVideo");
+  video.play();
 
-  <script>
-    function startVideo() {
-      const video = document.getElementById('bg-video');
-      video.muted = false; // Ton einschalten
-      video.play();
-      document.getElementById('play-button').style.display = 'none';
-    }
-  </script>
+  if (video.requestFullscreen) {
+    video.requestFullscreen().catch(() => {});
+  }
+}
+</script>
 
 </body>
 </html>
