@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <title>Am Meer der tausend Tränen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    body, html {
+    html, body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -12,56 +14,39 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #0a0a30; /* ruhiges, dunkles Blau */
+      background-color: #f2d27a; /* warmes Gold */
       font-family: Georgia, serif;
     }
 
     .text-container {
-      max-width: 800px;
-      padding: 40px;
-      color: #f5e9c8; /* weiß-goldener Ton */
+      max-width: 90%;
+      padding: 24px;
       text-align: center;
-      line-height: 1.7;
-      font-size: 20px;
-    }
-
-    .text-container p {
-      margin-bottom: 1.5em;
+      color: #0a0a30; /* dunkles Blau */
+      line-height: 1.6;
+      font-size: 22px;
     }
 
     .title {
       font-size: 26px;
-      margin-bottom: 2em;
-      letter-spacing: 0.05em;
+      margin-bottom: 1.8em;
+      font-weight: normal;
+    }
+
+    @media (max-width: 600px) {
+      .text-container {
+        font-size: 24px;
+        padding: 20px;
+      }
+
+      .title {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <div class="text-container">
-    <div class="title">Am Meer der tausend Tränen</div>
-
-    <p>
-      Hinter des Schleiers grau,<br>
-      am Meer der tausend Tränen<br>
-      sind Dämme hoch gebaut,<br>
-      das Land dahinter – dürr.
-    </p>
-
-    <p>
-      Heute öffne ich die Schleusen,<br>
-      das Wasser tritt hinaus.<br>
-      Ich höre es tosen und säuseln,<br>
-      es bahnt sich seinen Weg.
-    </p>
-
-    <p>
-      Bringt Leben und bringt Fülle<br>
-      ins Herz der Ewigkeit.<br>
-      Und wenn ich zur Trauer werde,<br>
-      weiß ich: die Liebe bleibt.
-    </p>
-  </div>
-
-</body>
-</html>
+    <div class="title">Am Meer der tausend Tr
