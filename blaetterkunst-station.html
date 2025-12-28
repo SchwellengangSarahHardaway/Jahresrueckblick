@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Blätterkunst-Station</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0a0a30; /* sehr dunkles Blau */
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    #video-container {
+      max-width: 95%;
+      max-height: 95%;
+      border: 2px solid #FFD700; /* goldener Rahmen */
+      border-radius: 5px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="video-container">
+    <video id="blätter-video" controls>
+      <source src="meer.mp4" type="video/mp4">
+      Dein Browser unterstützt das Video-Tag nicht.
+    </video>
+  </div>
+
+</body>
+</html>
